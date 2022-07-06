@@ -1,0 +1,48 @@
+//setup
+:ClrHome
+:9->X
+:1->A
+//loop 1
+:Repeat 1=2
+:1->B
+:randInt(1,9->C
+//loop 2
+:Repeat B=8 or A=B
+:If not(K=0
+:ClrHome
+:getKey->K
+//player movement
+:If K=24 and not(X=1
+:X-1->X
+:If K=24 and X=1
+:12->X
+:If K=26 and not(X=12
+:X+1->X
+:If K=26 and X=12
+:1->X
+:Output(8,X,”^”
+//shooting
+:If K=21
+:A-1->A
+:If A<9
+:A-1->A
+:If A=0
+:9->A
+:If not(A=9
+:Output(A,X,”|”
+:If not(A=9
+:Output(A+1,X,” ”
+:If A=9
+:Output(1,X,” ”
+//enemy movement
+:Output(B,C,” ”
+:If B<8
+:B+1->B
+:Output(B,C,”𝛑”
+:End
+:Output(B,C,” ”
+//scoring system
+:If A=B
+:S+10->S
+:Output(1,9,S
+:End
